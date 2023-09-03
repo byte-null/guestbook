@@ -1,0 +1,80 @@
+#center-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  max-width: 500px;
+
+}
+
+.card > span {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card > p {
+  margin-bottom: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+#guest-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#response {
+  max-width: 500px;
+  margin: 50px auto;
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+.posts-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}

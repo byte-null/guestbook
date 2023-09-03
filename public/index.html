@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.5"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <form
+      id="guest-form"
+      hx-post="/submit"
+      hx-trigger="verified"
+      hx-target="#response"
+    >
+      <input type="text" name="name" id="name" placeholder="Name" />
+      <textarea
+        type="text"
+        name="message"
+        id="message"
+        placeholder="Message"
+      ></textarea>
+      <button
+        data-callback="onSubmit"
+        class="g-recaptcha"
+        data-sitekey="6LedwfAnAAAAAAI0mid94SKQLpcc8XEIr9yBQq3D"
+      >
+        Save
+      </button>
+    </form>
+    <div id="response"></div>
+
+    <div id="center-div">
+      <h3 class="posts-header">Visitor's Messages</h3>
+      <div hx-get="/guestbook" hx-trigger="load" hx-target="#cards" hx-swap="innerHTML" id="cards"></div>
+    </div>
+  </body>
+  <script>
+    function onSubmit(token) {
+      const event = new Event("verified");
+      const elem = document.querySelector("#guest-form");
+      elem.dispatchEvent(event);
+    }
+  </script>
+</html>
